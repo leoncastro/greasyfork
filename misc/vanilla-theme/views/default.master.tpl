@@ -77,7 +77,7 @@
 				<li class="help-link"><a href="/{$smarty.get.locale|default:'en'}/help/">{t c="layouts.application.help" d="Help"}</a></li>
 				<li class="nav-search">
 					<form id="script-search" action="/{$smarty.get.locale|default:'en'}/scripts/search">
-						<input type="search" name="q" placeholder="{t c="layouts.application.search" d="Search"}" size="10"><input type="submit" value="→">
+						<input type="search" name="q"><input class="search-submit" type="submit" value="🔎">
 					</form>
 				</li>
             </ul>
@@ -101,5 +101,18 @@
       </div>
    </div>
    {event name="AfterBody"}
+
+   <script>
+      {literal}
+         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+         })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+         ga('create', 'UA-48197018-3', 'auto');
+         ga('send', 'pageview');
+      {/literal}
+   </script>
+
 </body>
 </html>

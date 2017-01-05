@@ -20,7 +20,7 @@ body:not(.Settings) #Head {
 	background-image: linear-gradient(#670000, #990000);
 	padding: 0.25em 0;
 }
-body:not(.Settings) a:not(.Button) {
+body:not(.Settings) a:not(.Button):not(.ChangePicture) {
 	color: #670000;
 }
 body .Pager {
@@ -103,15 +103,20 @@ body .Pager .Highlight {
 }
 
 #Body {
+	box-sizing: border-box;
+	margin: auto;
+	max-width: 960px;
+}
+#Content {
 	box-shadow: 0 0 5px #DDDDDD;
 	background-color: white;
 	border: 1px solid #BBBBBB;
 	border-radius: 5px;
 	box-sizing: border-box;
-	margin: auto;
-	margin-top: 14px;
-	max-width: 960px;
 	padding: 14px 1em 1em;
+	float: left;
+	width: 720px;
+	margin: 0;
 }
 #Body .Row {
 	width: 934px;
@@ -123,14 +128,20 @@ body .Pager .Highlight {
 	margin: 0 10px 10px 0;
 	font-size: 0.9em;
 }
-#Panel .FilterMenu, #Panel .PanelCategories {
+#Panel .FilterMenu, #Panel .PanelCategories, #Panel .MeBox {
 	margin: .5em 0 0;
 	list-style-type: none;
-	padding: 1em 0;
 	box-shadow: 0 0 5px #DDDDDD;
 	border: 1px solid #BBBBBB;
 	border-radius: 5px;
 	background-color: white;
+}
+#Panel .FilterMenu, #Panel .PanelCategories {
+	padding: 1em 0;
+}
+#Panel .MeBox {
+	padding: 1em;
+	margin-bottom: 10px;
 }
 #Panel .FilterMenu li, #Panel .PanelCategories li {
 	border: none!important;
@@ -152,17 +163,11 @@ body .Pager .Highlight {
 	padding: .4em 1em .4em calc(1em - 3px);
 	background: linear-gradient(white, #EEEEEE);
 }
-#Content {
-	float: left;
-	width: 720px;
-	margin: -15px 0 0 0;
-	background-color: transparent;
-}
 #Content .HomepageTitle {
 	display: inline-block;
+	margin: -28px -4px 0 0;
 	position: relative;
-	top: -4px;
-	margin: 0 -4px 0 0;
+	top: -8px;
 	padding: 0.25em .5em .5em;
 	background: rgba(0, 0, 0, 0.03);
 	font-weight: bold;
@@ -270,4 +275,70 @@ pre code {
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	user-select: none;
+}
+#PagerBefore {
+	display: none;
+}
+.nav-search #script-search {
+	position: relative;
+	vertical-align: middle;
+}
+.nav-search #script-search input[type=search] {
+	padding-right: 20px;
+	width: 175px;
+}
+.nav-search #script-search input[type=submit] {
+	position: absolute;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	right: 0;
+	top: 0;
+	border: 0;
+	padding-left: 0;
+	padding-right: 6px;
+	margin-left: 0;
+	margin-right: 0;
+	background: none;
+	opacity: 0.5;
+	box-sizing: border-box;
+}
+
+/* Index rating image - move to left of title  */
+.rating-image {
+	float: left;
+	margin-right: 5px;
+}
+/* Override mobile theme */
+.rating-image {
+	height: 16px !important;
+	width: 16px !important;
+}
+
+/* Form rating options */
+.ExtraDiscussionData-Rating label {
+	display: block !important;
+}
+
+.ExtraDiscussionData-Rating label > * {
+	display: inline-block;
+}
+
+.DiscussionForm .PostOptions .ExtraDiscussionData-Rating label, .CommentForm .CommentOptions .ExtraDiscussionData-Rating label {
+	padding-top: 3px;
+}
+
+.DiscussionForm .PostOptions .ExtraDiscussionData-Rating input, .CommentForm .CommentOptions .ExtraDiscussionData-Rating input {
+	margin-top: 0;
+}
+
+.DiscussionForm .PostOptions .ExtraDiscussionData-Rating *, .CommentForm .CommentOptions .ExtraDiscussionData-Rating * {
+	vertical-align: top;
+}
+
+.DiscussionForm .PostOptions .ExtraDiscussionData-Rating li, .CommentForm .CommentOptions .ExtraDiscussionData-Rating li {
+	display: list-item;
+}
+
+.DiscussionForm .PostOptions .ExtraDiscussionData-Rating ul, .CommentForm .CommentOptions .ExtraDiscussionData-Rating ul {
+	list-style: inside;
 }

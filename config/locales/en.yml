@@ -9,8 +9,6 @@ en:
       help: "Help"
       # link to sign in
       sign_in: "Sign in"
-      # search placeholder
-      search: "Search"
   helpers:
     application:
       time_ago:
@@ -680,6 +678,10 @@ en:
     listing_updated_scripts: "Updated scripts"
     # sort link for sorting users by when they signed up
     listing_registration_date: "Registration date"
+    # title for page showing list of users
+    listing_title: "Users"
+    # placeholder for user search box
+    search_placeholder: "Search users"
     # default option for the user's preferred locale
     locale_prompt: "(Choose a locale)"
     # text describing what the show ads checkbox does
@@ -858,6 +860,19 @@ en:
         <p>%{site_name} contains user-generated content, and scripts posted may be able to track users if they install that script.</p>
         <h2>Third party libraries</h2>
         <p>%{site_name} may include third party code to collect statistics or display advertisements on the site. These libraries may include tracking logic.</p>
+  search:
+    script_search:
+      title: "Script Search"
+      description: "Search for scripts. Searches script names, descriptions, additional infos, and author names. %{sphinx_link:Sphinx extended query syntax.}"
+    code_search:
+      title: "Code Search"
+      description: "Search script code. This is a case-insensitive, plain-text search with no wildcards."
+    forum_search:
+      title: "Forum Search"
+      description: "Search for discussions and reviews in the forum. %{fulltext_link:MySQL natural language search.}"
+    user_search:
+      title: "User Search"
+      description: "Search for users by name. Plain-text LIKE search."
   common:
     # text to show before listing errors in a submission
     error_preamble: "There were some problems with what you posted..."

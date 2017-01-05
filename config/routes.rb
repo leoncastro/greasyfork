@@ -1,6 +1,4 @@
 Greasyfork::Application.routes.draw do
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
 
 	get 'sso', :to => 'home#sso'
 
@@ -74,7 +72,6 @@ Greasyfork::Application.routes.draw do
 				get 'by-site(.:format)', :action => 'by_site', :as => 'site_list'
 				# :site can contain a dot, make sure site doesn't eat format or vice versa
 				get 'by-site/:site(.:format)', :action => 'index', :as => 'by_site', :constraints => {:site => /.*?/, :format => /|html|atom|json|jsonp/}
-				get 'under-assessment(.:format)', :action => 'under_assessment', :as => 'under_assessment'
 				get 'reported(.:format)', :action => 'reported', :as => 'reported'
 				get 'reported_not_adult(.:format)', :action => 'reported_not_adult', :as => 'reported_not_adult'
 				get 'requested_permanent_deletion(.:format)', :action => 'requested_permanent_deletion', :as => 'requested_permanent_deletion'
@@ -119,6 +116,7 @@ Greasyfork::Application.routes.draw do
 		get 'help/privacy', :to => 'help#privacy', :as => 'help_privacy'
 
 		post 'preview-markup', :to => 'home#preview_markup', :as => 'preview_markup'
+		get 'search', to: 'home#search'
 
 		resources :moderator_actions, :only => [:index]
 
